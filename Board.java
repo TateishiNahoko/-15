@@ -19,6 +19,7 @@ public class Board {
                 index++;
             }
         }
+        makeLine();
     }
     
 //    ラインが8つ
@@ -126,29 +127,21 @@ public class Board {
     }
 
  
-
-    
-                    
 //    3つ並んでいるかどうかの確認
     public boolean judge() {
-//    checkLineをもってくる、checkLineがtrueだったらjudgeもtrue
-        Cell[] cell= new Cell[3];
-        Line result = new Line(cell);
-        
-        if (result.checkLine()) {
-            return true;
-        } 
-        return false;
-    }        
-//        checkLineをして、（もってきて？）さっき作ったLineと比較（勝利ラインかどうかの判定）    
-//        true 抜ける　ゲーム終了
-//        false 抜けない　選択に戻る
-//        っていうのをメインに返す
+    	
+    	boolean result = false;
+    	for(int i = 0; i < lines.length; i++) {
+    		result = lines[i].checkLine();
+    		if(result == true) {
+    			return true;
+    		}
+    	}
+    	return false;
+    	
+    }
 //    Lineクラスから値を持ってくる（checkLine）        
 
- 
-
- 
 
 //    ボードの状態を表示する
     public void showBoard() {
