@@ -68,33 +68,49 @@ public class Board {
     }
     
 //    マスを指定する・範囲内外かの確認・マークを置く
-    public void selectCell(int x, int y) {
+    public boolean selectCell(int x, int y) {  
         
-        checkArea (x, y);
+    	boolean resultcheckArea = true;
+    	resultcheckArea = checkArea (x, y);
+         if(resultcheckArea == false) {
+        	 return false;
+         }
+        int index = 0;
         
-        Mark mark = null; //今既に入っているかのマーク
-        mark = cells[0].checkCell(); //(1,1)
-        
-        if(mark == null) {
-        	
-        	cell.setMark(Mark.CIRCLE);
-        	
+        if(x == 1) {
+        	if(y == 1) {
+        		index = 0;
+        	}else if(y == 2){
+        		index = 1;
+        	}else {
+        		index = 2;
+        	}
+        }else if(x == 2){
+        	if(y == 1) {
+        		index = 3;
+        	}else if(y == 2){
+        		index = 4;
+        	}else {
+        		index = 5;
+        	}
+        }else {
+        	if(y == 1) {
+        		index = 6;
+        	}else if(y == 2){
+        		index = 7;
+        	}else {
+        		index = 8;
+        	}
         }
-        
-        /*cells[1].checkCell();
-        cells[2].checkCell();
-        cells[3].checkCell();
-        cells[4].checkCell();
-        cells[5].checkCell();
-        cells[6].checkCell();
-        cells[7].checkCell();
-        cells[8].checkCell();*/
-        
-        
-        Mark mark = null;
-        cell.setMark(mark);
-        
-    }
+        Mark mark = Mark.NONE; //今既に入っているかのマーク
+        mark = cells[index].checkCell(); 
+        if(mark == Mark.NONE) {
+        	cells[index].setMark(Mark.CIRCLE);
+        }else {
+        	return false;
+        }
+        return true;
+ }
     
 //     入力された文字列の判定
     public boolean checkArea(int x, int y) {
