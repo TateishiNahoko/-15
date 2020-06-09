@@ -25,7 +25,7 @@ public class Board {
 //    ラインが8つ
     private void makeLine() {
 //        8回ループする
-        for (int i = 0; i <= lines.length; i++) {    
+        for (int i = 0; i < lines.length; i++) {    
 //            ラインを生成する
             Cell[] cells= new Cell[size];
             lines[i] = new Line(cells);
@@ -150,12 +150,11 @@ public class Board {
             
         System.out.println(squareLine);
 
- 
-
+        int index = 0;
         for(int y = 0; y < 3; y++) {
             System.out.print("|");
-            for(int x = 0; x < 3; x++) {
-                mark = cell(x,y).getMark();
+                for(int x = 0; x < 3; x++) {
+                mark = cells[index].checkCell();
                 if(mark == Mark.CIRCLE) {
                     System.out.print("○");
                 } else {
@@ -165,10 +164,9 @@ public class Board {
             }
                 System.out.println();
                 System.out.println(squareLine);
-            }
+       
         }
-
- 
+    }
 
 
 //    ゲーム終了の表示をする
