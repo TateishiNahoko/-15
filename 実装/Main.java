@@ -22,8 +22,6 @@ public class Main {
 			x = Integer.parseInt(zahyo[0]);
 			y = Integer.parseInt(zahyo[1]);
 
-			System.out.println("確認結果" + x + " " + y);
-
 			result = board.selectCell(x, y);
 		} while (result == false);
 		
