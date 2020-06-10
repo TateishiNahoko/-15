@@ -85,7 +85,7 @@ public class BoardTest {
 	}
 
 	@Test
-	public void testBoard2_2() {
+	public void testBoard3_1() {
 
 		Board board = new Board();
 		board.showFinish();
