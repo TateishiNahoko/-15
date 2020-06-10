@@ -1,4 +1,4 @@
-package miniproject;
+package miniproject_1;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -69,30 +69,11 @@ public class BoardTest {
 		Board board = new Board();
 		
 		boolean actual = board.checkArea(x,y);
-		boolean expected_result = true;
+		boolean expected_result = false;
 		
 		assertThat(actual, is(expected_result));
 	}	
-	@Test
-	public void testBoard2_1() {
-		
-		/*int x = 1;
-		int y = 1;*/
-		
-		Board board = new Board();
-		
-		Cell cell = board.selectCell();
-		
-		cell.setMark(Mark.CIRCLE);
-		board.showBoard();
-	}
-	@Test
-	public void testBoard2_2() {
-	
-		Board board = new Board();
-	    board.showFinish();
-	    
-	}
+
 }
 		
 	
