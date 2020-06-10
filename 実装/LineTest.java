@@ -20,7 +20,7 @@ public class LineTest {
 		cells[1] = cell2;
 		cells[2] = cell3;
 
-		Line line = new Line(cells);
+		Line line = new Line(cell1,cell2,cell3);
 
 		cell1.setMark(Mark.CIRCLE);
 		cell2.setMark(Mark.CIRCLE);
@@ -42,7 +42,7 @@ public class LineTest {
 		cells[1] = cell2;
 		cells[2] = cell3;
 
-		Line line = new Line(cells);
+		Line line = new Line(cell1,cell2,cell3);
 
 		cell1.setMark(Mark.CIRCLE);
 		cell2.setMark(Mark.CIRCLE);
