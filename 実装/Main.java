@@ -10,6 +10,9 @@ public class Main {
 		int x = 0;
 		int y = 0;
 		boolean result = true;
+		
+		do{
+			
 		do {
 			System.out.println("列と行を、半角スペースで区切って入力して下さい(例：2列目の3行目 → 2 3) ");
 
@@ -23,9 +26,13 @@ public class Main {
 
 			result = board.selectCell(x, y);
 		} while (result == false);
+		
+		
 
 		result = board.judge();
 		board.showBoard();
+	}while(result == false);
+	
 		if (result == true) {
 			board.showFinish();
 		}
