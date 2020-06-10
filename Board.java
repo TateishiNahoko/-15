@@ -25,41 +25,48 @@ public class Board {
 //    ラインが8つ
     private void makeLine() {
 //        8回ループする
-        for (int i = 0; i < lines.length; i++) {    
+        //for (int i = 0; i < lines.length; i++) {    
 //            ラインを生成する
-            Cell[] cells= new Cell[size];
-            lines[i] = new Line(cells);
-        }
+            //Cell[] cells= new Cell[size];
+            //lines[i] = new Line(cells);
+        //}
         
         int lineno = 0;
         int cellno = 0;
 //        ラインにセルを登録する
 //        縦ラインの登録
-        for (int x = 1; x <= size; x++) {
-            for (int y = 1; y <= size; y++) {
-                lines[lineno].cell[cellno] = new Cell(x,y);
-                cellno++;
-            }
+        
+        for (int i = 0; i < size; i++) {
+            //for (int y = 1; y <= size; y++) {
+                //lines[lineno].cell[cellno] = new Cell(x,y);
+            	lines[lineno] = new Line(cells[i],cells[3 + i],cells[6 + i]);
+                //cellno++;
+            //}
             lineno++;
         }
         
         cellno = 0;
 //        横ラインの登録
-        for (int y = 1; y <= size; y++) {
-            for (int x = 1; x <= size; x++) {
-                lines[lineno].cell[cellno] = new Cell(x,y);
-                cellno++;
-            }
+        for (int i = 0; i < size; i++) {
+            //for (int x = 1; x <= size; x++) {
+                //lines[lineno].cell[cellno] = new Cell(x,y);
+        	lines[lineno] = new Line(cells[i * size],cells[1 + i * size],cells[2 + i * size]);
+                //cellno++;
+            //}
             lineno++;
         }
         
         cellno = 0;
 //        斜めラインの登録
-        for (int x = 1,y = 1; x <= size && y <= size; x++,y++) {
-                lines[lineno].cell[cellno] = new Cell(x,y);
-                cellno++;
-            }
-            lineno++;
+        //for (int x = 1,y = 1; x <= size && y <= size; x++,y++) {
+                //lines[lineno].cell[cellno] = new Cell(x,y);
+        	lines[lineno] = new Line(cells[0],cells[4],cells[8]);
+        	lineno++;
+        	
+        	lines[lineno] = new Line(cells[2],cells[4],cells[6]);
+                //cellno++;
+            //}
+            //lineno++;
         
         cellno = 0;
         for (int x = size,y = 1; x <= 1 && y >= size; x--,y++) {
