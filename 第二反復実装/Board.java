@@ -12,6 +12,7 @@ public class Board {
                 this.cells[x-1][y-1] = new Cell(x, y);        
             }
         }
+        makeLine();
     }
 
 
@@ -52,28 +53,20 @@ public class Board {
             }     
         }
 
-    private makeLine[]; {
+    private final void makeLine() {
             // 横ライン
-            lines[0] = new Line(0, 0, 0);
-            lines[0].setCell(cells[0][0], cells[1][0], cells[2][0]);
-            lines[1] = new Line();
-            lines[1].setCell(cells[0][1], cells[1][1], cells[2][1]);
-            lines[2] = new Line();
-            lines[2].setCell(cells[0][2], cells[1][2], cells[2][2]);
+            lines[0] = new Line(cells[0][0], cells[1][0], cells[2][0]);
+            lines[1] = new Line(cells[0][1], cells[1][1], cells[2][1]);
+            lines[2] = new Line(cells[0][2], cells[1][2], cells[2][2]);
                 
             // 縦ライン
-            lines[3] = new Line(0, 0, 0);
-            lines[3].setCell(cells[0][0], cells[0][1], cells[0][2]);
-            lines[4] = new Line();
-            lines[4].setCell(cells[1][0], cells[1][1], cells[1][2]);
-            lines[5] = new Line();
-            lines[5].setCell(cells[2][2], cells[2][2], cells[2][2]);
+            lines[3] = new Line(cells[0][0], cells[0][1], cells[0][2]);
+            lines[4] = new Line(cells[1][0], cells[1][1], cells[1][2]);
+            lines[5] = new Line(cells[2][2], cells[2][2], cells[2][2]);
                 
             // 斜めライン
-            lines[6] = new Line(0, 0, 0);
-            lines[6].setCell(cells[0][0], cells[1][1], cells[2][2]);
-            lines[7] = new Line();
-            lines[7].setCell(cells[2][0], cells[1][1], cells[0][2]);
+            lines[6] = new Line(cells[0][0], cells[1][1], cells[2][2]);
+            lines[7] = new Line(cells[2][0], cells[1][1], cells[0][2]);
         }
     
 

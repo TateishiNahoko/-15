@@ -4,6 +4,7 @@ public class Turn {
 	private int turn = 0;
 	private Player player;
 	private Cell cell;
+	
 
 	public Turn(Player player) {
 		this.player = player;
@@ -20,10 +21,16 @@ public class Turn {
 		}
 	}
 
-	public void startTurn(Board board) {
-		int[] xy = new int[2];
-		xy = player.selectCell();
+	public void startTurn(Board board) {//引数をつけることをTictactoeの人に伝える
+		int[] zahyou = new int[2];
+		zahyou = player.selectCell();
+		
+		board.checkArea(zahyou[0],zahyou[1]);
+		
+		cell.checkCell();
+		
+		cell.setMark(mark);
 
-		board.cheakArea();
 	}
+
 }

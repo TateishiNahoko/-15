@@ -1,4 +1,4 @@
-package miniproject_1;
+package miniproject_2;
 
 public class Cell {
 
@@ -36,7 +36,7 @@ public class Cell {
 		if(this.mark == Mark.NONE) {
 			return false;	
 		} else {
-			System.out.print("‚·‚Å‚É’u‚©‚ê‚Ä‚¢‚Ü‚·B");
+			System.out.print("ã™ã§ã«ç½®ã‹ã‚Œã¦ã„ã¾ã™ã€‚");
 			return true;
 		}
 	}
