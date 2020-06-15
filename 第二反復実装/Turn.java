@@ -20,10 +20,10 @@ public class Turn {
 		}
 	}
 
-	public void startTurn() {
+	public void startTurn(Board board) {
 		int[] xy = new int[2];
 		xy = player.selectCell();
 
-		cheakArea();
+		board.cheakArea();
 	}
 }
